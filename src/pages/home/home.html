@@ -1,14 +1,44 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Slide
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <p>Slide</p>
+  <ion-list>
+      <ion-item-sliding #item>
+        <ion-item>
+          Item
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button (click)="edit">Edit</button>
+          <button ion-button color="danger" (click)="delete">delete</button>
+        </ion-item-options>
+    
+        <ion-item-options side="left">
+          <button ion-button (click)="unread(item)">Unread</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-slides>
+        <ion-slide class="slide1">
+          <h1>Slide 1</h1>
+          <img src="../../assets/imgs/dragon.jpeg">
+        </ion-slide>
+        <ion-slide class="slide2">
+          <h1>Slide 2</h1>
+          <img src="../../assets/imgs/mercury.jpg">
+        </ion-slide>
+        <ion-slide class="slide3">
+            <img src="../../assets/imgs/hydrogen.png">
+          <h1>Slide 3</h1>
+        </ion-slide>
+      </ion-slides>
 </ion-content>
